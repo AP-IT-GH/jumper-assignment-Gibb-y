@@ -1,5 +1,5 @@
 behaviors:
-  CubeAgentML1:
+  JumpAgent:
     trainer_type: ppo
     hyperparameters:
       batch_size: 10
