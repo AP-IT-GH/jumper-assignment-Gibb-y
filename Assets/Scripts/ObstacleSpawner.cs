@@ -32,7 +32,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (deltaTime >= spawnInterval)
         {
-            GameObject.Instantiate(Obstacle);
+            GameObject.Instantiate(Obstacle, transform);
             amount++;
             deltaTime = 0;
             spawnInterval = Random.Range(SpawnIntervalMin, SpawnIntervalMax);

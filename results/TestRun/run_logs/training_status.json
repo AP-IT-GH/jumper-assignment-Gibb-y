@@ -9,15 +9,24 @@
                 "auxillary_file_paths": [
                     "results\\TestRun\\JumpAgent\\JumpAgent-12167.pt"
                 ]
+            },
+            {
+                "steps": 18319,
+                "file_path": "results\\TestRun\\JumpAgent\\JumpAgent-18319.onnx",
+                "reward": null,
+                "creation_time": 1745770141.4801233,
+                "auxillary_file_paths": [
+                    "results\\TestRun\\JumpAgent\\JumpAgent-18319.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 12167,
+            "steps": 18319,
             "file_path": "results\\TestRun\\JumpAgent.onnx",
-            "reward": 12.5,
-            "creation_time": 1745337668.0047913,
+            "reward": null,
+            "creation_time": 1745770141.4801233,
             "auxillary_file_paths": [
-                "results\\TestRun\\JumpAgent\\JumpAgent-12167.pt"
+                "results\\TestRun\\JumpAgent\\JumpAgent-18319.pt"
             ]
         }
     },

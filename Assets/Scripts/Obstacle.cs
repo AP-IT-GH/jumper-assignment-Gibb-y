@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         float height = Random.Range(0.2f, 1f);
         transform.localScale = new Vector3(transform.localScale.x, height, transform.localScale.z);
-        transform.position = new Vector3(transform.position.x, height / 2, transform.position.z);
+        transform.localPosition = new Vector3(transform.localPosition.x, height / 2, transform.localPosition.z);
     }
 
     private void Update()

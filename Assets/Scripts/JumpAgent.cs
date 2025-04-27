@@ -1,8 +1,7 @@
-using System.Threading;
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 
 public class JumpAgent : Agent
 {
@@ -21,11 +20,19 @@ public class JumpAgent : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
+        if (actions.DiscreteActions[0] == 1)
+            AddReward(-0.01f);
+
         if (actions.DiscreteActions[0] == 1 && grounded)
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             grounded = false;
         }
+    }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        sensor.AddObservation(isJumping);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -52,9 +59,9 @@ public class JumpAgent : Agent
         RaycastHit hit;
         rewardTimer += Time.fixedDeltaTime;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask) && rewardTimer >= 1)
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask) && rewardTimer >= 0.5)
         {
-            SetReward(1.0f);
+            AddReward(5.0f);
             rewardTimer = 0f;
         }
 
@@ -73,7 +80,8 @@ public class JumpAgent : Agent
 
         if (collision.collider.gameObject.layer == 6)
         {
-            SetReward(-0.5f);
+            AddReward(-5f);
+            Destroy(collision.collider.gameObject);
         }
     }
 }
