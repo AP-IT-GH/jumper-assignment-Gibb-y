@@ -579,6 +579,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7339122105068898722, guid: fd6318c4410384d439149158413a5e0a, type: 3}
   m_PrefabInstance: {fileID: 4929028523488188365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1963178610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7356386209905022546, guid: 8bcf2a1056ae60f44b3ab8b4c37f6944, type: 3}
+  m_PrefabInstance: {fileID: 6030646011139852350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5235c83f65e771e4094865ba0bd0fcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4929028523488188365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -587,6 +598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1034023420}
     m_Modifications:
+    - target: {fileID: 729961867303089596, guid: fd6318c4410384d439149158413a5e0a, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 1963178610}
     - target: {fileID: 729961867303089596, guid: fd6318c4410384d439149158413a5e0a, type: 3}
       propertyPath: JumpForce
       value: 600
@@ -677,6 +692,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7607255070923237192, guid: fd6318c4410384d439149158413a5e0a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4929028523488188376}
+    - targetCorrespondingSourceObject: {fileID: 7607255070923237192, guid: fd6318c4410384d439149158413a5e0a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4929028523488188377}
   m_SourcePrefab: {fileID: 100100000, guid: fd6318c4410384d439149158413a5e0a, type: 3}
 --- !u!1 &4929028523488188366 stripped
 GameObject:
@@ -723,9 +741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb6b867a41448888c1cd4f99643ad71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SensorName: SensorGround
+  m_SensorName: SensorGroundFar
   m_DetectableTags: []
-  m_RaysPerDirection: 3
+  m_RaysPerDirection: 0
   m_MaxRayDegrees: 70
   m_SphereCastRadius: 0.5
   m_RayLength: 8
@@ -840,6 +858,22 @@ MonoBehaviour:
   DecisionPeriod: 5
   DecisionStep: 0
   TakeActionsBetweenDecisions: 1
+--- !u!114 &4929028523488188377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4929028523488188366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b6042bc9a5d4aa58d931eae49442e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentParameters:
+    maxStep: 0
+  hasUpgradedFromAgentParameters: 1
+  MaxStep: 0
 --- !u!1001 &6030646011139852350
 PrefabInstance:
   m_ObjectHideFlags: 0

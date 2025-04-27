@@ -10,6 +10,8 @@ public class ObstacleSpawner : MonoBehaviour
     public float ObstacleSpeed;
     public float SpawnIntervalMin = 1.3f;
     public float SpawnIntervalMax = 2f;
+
+    public int amount = 0;
     [SerializeField]
     private float spawnInterval;
 
@@ -31,6 +33,7 @@ public class ObstacleSpawner : MonoBehaviour
         if (deltaTime >= spawnInterval)
         {
             GameObject.Instantiate(Obstacle);
+            amount++;
             deltaTime = 0;
             spawnInterval = Random.Range(SpawnIntervalMin, SpawnIntervalMax);
         }
